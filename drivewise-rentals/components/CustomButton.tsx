@@ -19,7 +19,8 @@ const CustomButton = ({ title, containerStyles, handleClick, btnType, textStyles
                   src={rightIcon} 
                   alt='Right Icon' 
                   fill 
-                  className='object-contain'/>
+                  className='object-contain'
+                />
               </div>
             )}
     </button>
