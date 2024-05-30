@@ -214,6 +214,6 @@
 }
 
 .search-manufacturer__option {
-  @apply cursor-default select-none py-2 pl-10 pr-4;
+  @apply w-full cursor-default bg-white select-none py-2 pl-10;
 }
 /* END: search manufacturer styles */
