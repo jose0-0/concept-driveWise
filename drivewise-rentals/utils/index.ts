@@ -1,11 +1,14 @@
+import { CarProps, FilterProps } from '@/types';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const fetchCars = async () => {
+const fetchCars = async (filters: FilterProps) => {
     const url = process.env.API_BASE_URL ?? '';
     const key = process.env.API_KEY ?? '';
     const host = process.env.API_HOST ?? '';
+
+    const { manufacturer, year, fuel, limit, model} = filters
 
     const headers = {
         'X-RapidAPI-Key': key,
@@ -13,7 +16,7 @@ const fetchCars = async () => {
     }
 
     try {
-        const response = await fetch(url, {
+        const response = await fetch(`${url}make=${manufacturer}&year=${year}$model=${model}&limit=${limit}&fuel_type=${fuel}`, {
             headers: headers,
         });
         
