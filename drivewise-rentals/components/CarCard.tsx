@@ -16,6 +16,8 @@ const CarCard = ({car}: CarCardProps) => {
 
     const { city_mpg, year, make, model, transmission, drive, } = car;
 
+    console.log(car);
+
     const carRent = calculateCarRent(city_mpg, year)
 
   return (
@@ -56,7 +58,7 @@ const CarCard = ({car}: CarCardProps) => {
                         alt='Tire'
                     />
                     <p className='text-[14px]'>
-                        {drive.toUpperCase()}
+                        {drive ?? 'Unknown'}
                     </p>
                 </div>
                 <div className='flex flex-col justify-center items-center gap-2'>
@@ -81,7 +83,6 @@ const CarCard = ({car}: CarCardProps) => {
                 />
             </div>
         </div>
-
         <CarDetails 
             isOpen={isOpen}
             closeModel={() => setIsOpen(false)} 
